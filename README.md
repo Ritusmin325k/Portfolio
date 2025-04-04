@@ -25,4 +25,4 @@ JavaScript – For interactivity and dynamic content.
 Live Demo
 
 You can check out the live version here:
-https://your-portfolio-link.github.io
+https://ritusmin325k.github.io/Portfolio/
