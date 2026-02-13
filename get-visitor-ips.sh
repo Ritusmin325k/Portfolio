@@ -4,7 +4,6 @@
 # Visitor IP Logger Script for Netlify
 #============================================
 # This script helps you retrieve visitor IPs from your Netlify deployment
-# Setup instructions below
 
 echo "╔════════════════════════════════════════════════════════════╗"
 echo "║       Netlify Portfolio - Visitor IP Retrieval Script      ║"
@@ -23,41 +22,62 @@ if ! command -v netlify &> /dev/null; then
     exit 1
 fi
 
-# Check if site is linked
-SITE_ID=$(cat .netlify/state.json 2>/dev/null | grep -o '"siteId":"[^"]*' | cut -d'"' -f4)
+echo "📌 Checking if site is linked..."
+echo ""
 
-if [ -z "$SITE_ID" ]; then
+# Try to get site info
+SITE_INFO=$(netlify status 2>&1)
+
+# Check if successfully linked
+if echo "$SITE_INFO" | grep -q "not linked"; then
     echo "❌ No Netlify site linked to this directory."
     echo ""
     echo "📌 Link your site with:"
     echo "   netlify link"
+    echo ""
+    echo "Or deploy with:"
+    echo "   netlify deploy --prod"
     exit 1
 fi
 
-echo "✅ Site ID: $SITE_ID"
-echo ""
-echo "🔍 Retrieving recent logs..."
-echo ""
+# Extract site name/ID
+SITE_NAME=$(echo "$SITE_INFO" | grep "Site name:" | awk -F': ' '{print $2}')
+SITE_ID=$(echo "$SITE_INFO" | grep "Site ID:" | awk -F': ' '{print $2}')
 
-# Get the logs (last 1000 lines by default)
-# This will show function logs with visitor IPs
-netlify logs --tail --lines=100 --site=$SITE_ID 2>/dev/null | grep -A2 "Visitor logged"
+if [ -n "$SITE_NAME" ]; then
+    echo "✅ Site Name: $SITE_NAME"
+fi
 
-if [ $? -ne 0 ]; then
-    echo "📊 Alternative: View Netlify Dashboard"
-    echo ""
-    echo "1. Go to https://app.netlify.com"
-    echo "2. Select your site"
-    echo "3. Click 'Functions' tab"
-    echo "4. Click 'log-visitor' function"
-    echo "5. View logs in real-time"
-    echo ""
-    echo "Or use Netlify API:"
-    echo ""
-    echo "   # Get your Netlify access token from: https://app.netlify.com/user/applications"
-    echo "   curl -H 'Authorization: Bearer YOUR_TOKEN' \\"
-    echo "     https://api.netlify.com/api/v1/sites/$SITE_ID/builds?limit=10"
+if [ -n "$SITE_ID" ]; then
+    echo "✅ Site ID: $SITE_ID"
 fi
 
 echo ""
+echo "🔍 Retrieving recent visitor logs..."
+echo "📊 Showing function invocations with visitor IPs..."
+echo ""
+
+# Get the logs
+netlify logs --lines=50 2>/dev/null | grep -i "visitor\|logged"
+
+if [ $? -ne 0 ]; then
+    echo ""
+    echo "💡 Alternative ways to view logs:"
+    echo ""
+    echo "1. 📊 View in Netlify Dashboard:"
+    echo "   https://app.netlify.com → Your Site → Functions → log-visitor"
+    echo ""
+    echo "2. 🔧 Use Netlify CLI (live logs):"
+    echo "   netlify logs --tail"
+    echo ""
+    echo "3. 📡 Use Netlify API:"
+    echo "   # Get your token from: https://app.netlify.com/user/applications"
+    echo "   export TOKEN='your_netlify_token'"
+    echo "   curl -H \"Authorization: Bearer \$TOKEN\" \\"
+    echo "     https://api.netlify.com/api/v1/sites/$SITE_ID/deploys"
+fi
+
+echo ""
+echo "═══════════════════════════════════════════════════════════════"
+echo "✅ For real-time logs, visit your Netlify dashboard"
 echo "═══════════════════════════════════════════════════════════════"
