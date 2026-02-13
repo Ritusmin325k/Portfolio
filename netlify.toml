@@ -1,0 +1,14 @@
+[build]
+  command = "echo 'Static site - no build needed'"
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+
+[context.production]
+  command = "echo 'Static site'"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

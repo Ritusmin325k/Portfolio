@@ -1,65 +1,889 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-      <link rel="stylesheet"type="text/css" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <!-- Link to external CSS file -->
+    <title>Ritus Min - Security Engineer & Linux Developer</title>
+    <meta name="description" content="Python developer, Linux enthusiast, cybersecurity learner. Building security tools and automation. 30+ GitHub stars.">
+    <meta name="keywords" content="Python, Security, Linux, Termux, Cybersecurity, Developer">
+    <meta name="author" content="Ritus Min">
+    <meta property="og:title" content="Ritus Min - Security Engineer">
+    <meta property="og:description" content="Building security tools, Linux automation, and ethical hacking solutions.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230969da'>⚙️</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <style>
-    .image-1{
-        position: absolute;
-        top: 13px;
-        right: 140px;
-    }
-    .para2{
-        color: white;
-        font-size: 15px;
-        font-family: 'IBM Plex Mono',Georgia;
-        position: absolute;
-        top: 1250px;
-        right: 700px;
-        
-    }
-    
-</style>
-  
-  
-       
-    
-      
-      <h5>Portfolio.</h5>
-   
-      <h2>Hi,Myself</h2>
-      <h1>Ritusmin Saikia</h1>
-     
-      
-        <h3>And I'm a</h3>
-        <h4 class="typewriter">Intermediate Developer</h4>
-      
-      
-      <h6>Hi,my name is Ritusmin and I am a Intermediate Developer want to know more click on About option</h6>
-        
-      <video src="1stvideo.mp4"width="380"height="300" controls autoplay muted loop>
-      </video>
-      <a id="download"href="https://drive.google.com/file/d/13L1o27HZF-wOhQyecKf0UZzxWhSTQ44N/view?usp=drivesdk">Download code</a>
-      
-     
-      
-      <select name="Select" id="count">
-    <option value="index.html" selected="">Home</option>
-    <option value="contact.html">Contact</option>
-    <option value="about.html">About</option>
-    <option value="project.html">project</option>
-  </select>
-      
-      
-    
-     <script src="script.js"defer></script>
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress"></div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <a href="https://github.com/Ritusmin325k" class="nav-brand" target="_blank">Ritusmin</a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#under-development" class="nav-link">In Development</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <video autoplay muted loop class="hero-video" playsinline>
+            <source src="src/assets/1stvideo.mp4" type="video/mp4">
+            Your browser doesn't support HTML5 video.
+        </video>
+        <div class="hero-content">
+            <h2 data-aos="fade-up" style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-text); font-weight: 600;">
+                Hello, I am Ritusmin Saikia
+            </h2>
+            <h1 data-aos="fade-up" data-aos-delay="50">
+                <span class="typing-text">Python Developer</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="100">
+                🐍 Python Developer | 🐧 Linux Enthusiast | 🔒 Cybersecurity Learner
+                <br>
+                Building security tools, automation scripts, and learning systems deeply.
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://github.com/Ritusmin325k" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Let's Talk
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <div class="about-content">
+            <p data-aos="fade-up" data-aos-delay="100">
+                Hey, I'm Ritusmin Saikia, a Class 9 student who loves Python, Linux, and cybersecurity. I'm deeply curious about how systems work internally, and I enjoy building small tools and automation projects that solve practical problems and help me understand technology at a deeper level.
+            </p>
+            <p data-aos="fade-up" data-aos-delay="150">
+                I started my journey by exploring programming basics and networking, and over time I moved into Linux environments, security concepts, and terminal-based development. I learn mainly by experimenting, practicing every day, and turning ideas into real working projects. Each build teaches me something new and pushes my skills a little further.
+            </p>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Even though I'm still at an early stage, I'm serious about growing into a future security and systems engineer. I focus on building strong fundamentals, writing clean code, and continuously improving step by step. I'm always open to learning, feedback, and opportunities to collaborate.
+            </p>
+
+            <!-- LEARNING JOURNEY TIMELINE -->
+            <div style="margin-top: 3rem;" data-aos="fade-up" data-aos-delay="250">
+                <h3 style="color: var(--accent-color); margin-bottom: 1.5rem; font-size: 1.2rem;">Learning Journey</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">1</div>
+                        <div class="timeline-content">
+                            <h3>Foundations (2024)</h3>
+                            <p>Started with Python basics, command line, and understanding fundamentals of programming.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">2</div>
+                        <div class="timeline-content">
+                            <h3>Python Programming (2025 Early)</h3>
+                            <p>Deep dive into Python, building automation scripts, and mastering scripting fundamentals.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">3</div>
+                        <div class="timeline-content">
+                            <h3>Linux & System (2025 Mid)</h3>
+                            <p>Learning Linux internals, shell scripting, system administration, and process management.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">4</div>
+                        <div class="timeline-content">
+                            <h3>Networking & Security Tools (Currently)</h3>
+                            <p>Building security tools, learning networking concepts, and exploring cybersecurity fundamentals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills" id="skills">
+        <h2 class="section-title" data-aos="fade-up">Skills & Expertise</h2>
+        <div class="skills-container">
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                <h3>🐍 Programming</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Python
+                        <span class="skill-proficiency">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Shell / Bash
+                        <span class="skill-proficiency">Beginner → Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Git & GitHub
+                        <span class="skill-proficiency">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <span class="tech-badge">Automation</span>
+                    <span class="tech-badge">Scripting</span>
+                    <span class="tech-badge">Web Dev</span>
+                </div>
+            </div>
+
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
+                <h3>🐧 Systems & Tools</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Linux
+                        <span class="skill-proficiency">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Networking
+                        <span class="skill-proficiency">Beginner → Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 55%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        System Design
+                        <span class="skill-proficiency">Beginner</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 45%;"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <span class="tech-badge">Termux</span>
+                    <span class="tech-badge">Command Line</span>
+                    <span class="tech-badge">Automation</span>
+                </div>
+            </div>
+
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                <h3>🔒 Security & Learning</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Cybersecurity Fundamentals
+                        <span class="skill-proficiency">Beginner</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 45%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        AI / ML Foundations
+                        <span class="skill-proficiency">Beginner</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Ethical Hacking
+                        <span class="skill-proficiency">Beginner → Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <span class="tech-badge">Privacy Tools</span>
+                    <span class="tech-badge">Security Tools</span>
+                    <span class="tech-badge">Learning</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRENTLY LEARNING SECTION -->
+    <section class="skills" style="background-color: var(--primary-bg);" id="learning">
+        <h2 class="section-title" data-aos="fade-up">Currently Learning</h2>
+        <div class="skills-container">
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                <h3>📚 Active Learning</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Linux
+                        <span class="skill-proficiency">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Networking
+                        <span class="skill-proficiency">Beginner → Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 55%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Cybersecurity Fundamentals
+                        <span class="skill-proficiency">Beginner</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 45%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Python
+                        <span class="skill-proficiency">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
+                <h3>🔧 Development & Tools</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Shell / Bash
+                        <span class="skill-proficiency">Beginner → Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        Git & GitHub
+                        <span class="skill-proficiency">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        AI / ML Foundations
+                        <span class="skill-proficiency">Beginner</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        System Design
+                        <span class="skill-proficiency">Beginner</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 45%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects" id="projects">
+        <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+
+        <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+            <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+            <button class="filter-btn" onclick="filterProjects('security')">Security Tools</button>
+            <button class="filter-btn" onclick="filterProjects('systems')">System Tools</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- PROJECT 1 -->
+            <div class="project-card" data-category="security" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%); font-size: 2.5rem;">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">PhantomRAT</h3>
+                    <div class="project-meta">
+                        <span><i class="fab fa-python"></i> Python</span>
+                        <span class="project-stars"><i class="fas fa-star"></i> 19</span>
+                    </div>
+                    <p class="project-description">
+                        Powerful Android remote access tool for ethical hacking. Generate payloads, access cameras/mics, steal files, and dump galleries.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Android</span>
+                        <span class="tech-tag">Ethical Hacking</span>
+                        <span class="tech-tag">RAT</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Ritusmin325k/PhantomRAT" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="javascript:void(0)" onclick="openProjectModal('phantom')" class="project-link">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card" data-category="security" data-aos="fade-up" data-aos-delay="150">
+                <div class="project-image" style="background: linear-gradient(135deg, #5f27cd 0%, #341f97 100%); font-size: 2.5rem;">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Advance IP Changer</h3>
+                    <div class="project-meta">
+                        <span><i class="fab fa-python"></i> Python</span>
+                        <span class="project-stars"><i class="fas fa-star"></i> 6</span>
+                    </div>
+                    <p class="project-description">
+                        Non-root privacy tool with automatic IP rotation. Built for Termux and Linux with Tor integration for anonymous browsing.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Privacy</span>
+                        <span class="tech-tag">Tor</span>
+                        <span class="tech-tag">Termux</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Ritusmin325k/Advance_Ip_Changer" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="javascript:void(0)" onclick="openProjectModal('ipchanger')" class="project-link">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card" data-category="systems" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); font-size: 2.5rem;">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Fast Editor</h3>
+                    <div class="project-meta">
+                        <span><i class="fab fa-python"></i> Python</span>
+                        <span class="project-stars"><i class="fas fa-star"></i> 2</span>
+                    </div>
+                    <p class="project-description">
+                        Lightweight terminal file editor for Termux and Linux. Fast file opening, intuitive navigation with arrow keys.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Terminal</span>
+                        <span class="tech-tag">Editor</span>
+                        <span class="tech-tag">Linux</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Ritusmin325k/Fast-Editor-fe-" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="javascript:void(0)" onclick="openProjectModal('fasteditor')" class="project-link">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-card" data-category="systems" data-aos="fade-up" data-aos-delay="250">
+                <div class="project-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); font-size: 2.5rem;">
+                    <i class="fas fa-folder-open"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Termux File Manager</h3>
+                    <div class="project-meta">
+                        <span><i class="fab fa-python"></i> Python</span>
+                        <span class="project-stars"><i class="fas fa-star"></i> 1</span>
+                    </div>
+                    <p class="project-description">
+                        Web-based file manager for Termux and Linux. Python backend with HTML interface for easy file browsing and management.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Web</span>
+                        <span class="tech-tag">File Manager</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Ritusmin325k/Termux-file-manager" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="javascript:void(0)" onclick="openProjectModal('filemanager')" class="project-link">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNDER DEVELOPMENT PROJECTS SECTION -->
+    <section class="under-development" id="under-development">
+        <h2 class="section-title" data-aos="fade-up">Under Development 🚀</h2>
+        <p style="text-align: center; color: var(--secondary-text); margin-bottom: 2.5rem; font-size: 1.05rem;" data-aos="fade-up" data-aos-delay="50">
+            Exciting projects currently being built. More details coming soon!
+        </p>
+
+        <div class="under-dev-grid">
+            <!-- UNDER DEV PROJECT 1 -->
+            <div class="under-dev-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="under-dev-image">
+                    <i class="fas fa-hourglass-half" style="font-size: 3rem;"></i>
+                    <span class="dev-badge">In Progress</span>
+                </div>
+                <div class="under-dev-content">
+                    <h3 class="under-dev-title">PhantomRAT-V2</h3>
+                    <p class="under-dev-description">
+                        Next-generation Android remote access tool with enhanced features, improved stability, and advanced security capabilities.
+                    </p>
+                    <div class="under-dev-tech">
+                        <span class="tech-tag">Android</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    <div class="under-dev-placeholder" style="margin: 1rem 0; border-radius: 6px; overflow: hidden;">
+                        <img src="screenshot.jpg" alt="PhantomRAT-V2 Screenshot" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--secondary-text); text-align: center; margin-top: 0.5rem;">
+                        ETA: Coming Soon
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT MODALS -->
+    <div id="phantomModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProjectModal('phantom')">&times;</span>
+            <h2 class="modal-title">PhantomRAT</h2>
+            <h4>Android Remote Access Tool</h4>
+            <p><strong>Problem:</strong> Security researchers need tools to demonstrate Android vulnerabilities in controlled environments.</p>
+            <p><strong>Solution:</strong> PhantomRAT is an ethical hacking tool that generates Android payloads for authorized security testing. Features include payload generation, camera/microphone access, file stealing, and gallery extraction.</p>
+            <p><strong>Tech Stack:</strong> Python, Android, APK generation</p>
+            <p><strong>Key Achievements:</strong></p>
+            <ul>
+                <li>19+ stars on GitHub (most popular project)</li>
+                <li>Complete payload generation system</li>
+                <li>Multi-feature Android access</li>
+                <li>Educational value for security researchers</li>
+            </ul>
+            <a href="https://github.com/Ritusmin325k/PhantomRAT" class="btn btn-primary" target="_blank" style="display: inline-block; margin-top: 1rem;">View on GitHub</a>
+        </div>
+    </div>
+
+    <div id="ipchangerModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProjectModal('ipchanger')">&times;</span>
+            <h2 class="modal-title">Advance IP Changer</h2>
+            <h4>Privacy Tool with Automatic IP Rotation</h4>
+            <p><strong>Problem:</strong> Users on mobile/Termux need privacy without root access.</p>
+            <p><strong>Solution:</strong> Non-root IP changer with automatic rotation and Tor integration. Works seamlessly on Termux and Linux with Proot.</p>
+            <p><strong>Tech Stack:</strong> Python, Tor, Termux, Proot</p>
+            <p><strong>Key Achievements:</strong></p>
+            <ul>
+                <li>Works without root access</li>
+                <li>Automatic IP rotation capabilities</li>
+                <li>Tor integration for deep privacy</li>
+                <li>Compatible with Termux and Linux</li>
+            </ul>
+            <a href="https://github.com/Ritusmin325k/Advance_Ip_Changer" class="btn btn-primary" target="_blank" style="display: inline-block; margin-top: 1rem;">View on GitHub</a>
+        </div>
+    </div>
+
+    <div id="fasteditorModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProjectModal('fasteditor')">&times;</span>
+            <h2 class="modal-title">Fast Editor</h2>
+            <h4>Lightweight Terminal File Editor</h4>
+            <p><strong>Problem:</strong> Terminal users need a fast, intuitive text editor with minimal dependencies.</p>
+            <p><strong>Solution:</strong> Lightweight editor for Termux and Linux with arrow-key navigation and instant file opening.</p>
+            <p><strong>Tech Stack:</strong> Python, Terminal UI</p>
+            <p><strong>Key Achievements:</strong></p>
+            <ul>
+                <li>Minimal dependencies</li>
+                <li>Intuitive arrow-key navigation</li>
+                <li>Works in resource-constrained environments</li>
+                <li>Fast file operations</li>
+            </ul>
+            <a href="https://github.com/Ritusmin325k/Fast-Editor-fe-" class="btn btn-primary" target="_blank" style="display: inline-block; margin-top: 1rem;">View on GitHub</a>
+        </div>
+    </div>
+
+    <div id="filemanagerModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProjectModal('filemanager')">&times;</span>
+            <h2 class="modal-title">Termux File Manager</h2>
+            <h4>Web-Based File Management for Terminals</h4>
+            <p><strong>Problem:</strong> Termux users need an intuitive way to manage files without leaving the terminal ecosystem.</p>
+            <p><strong>Solution:</strong> Web-based file manager accessible through browser with Python backend and HTML interface.</p>
+            <p><strong>Tech Stack:</strong> Python, HTML, Web Interface</p>
+            <p><strong>Key Achievements:</strong></p>
+            <ul>
+                <li>Web-based interface in terminal environment</li>
+                <li>Python backend for file operations</li>
+                <li>User-friendly HTML interface</li>
+                <li>Cross-platform compatibility</li>
+            </ul>
+            <a href="https://github.com/Ritusmin325k/Termux-file-manager" class="btn btn-primary" target="_blank" style="display: inline-block; margin-top: 1rem;">View on GitHub</a>
+        </div>
+    </div>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="achievements">
+        <h2 class="section-title" data-aos="fade-up">Achievements & Stats</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="achievement-icon">⭐</div>
+                <h3>30+ GitHub Stars</h3>
+                <p>Total stars across projects—recognition from the community</p>
+            </div>
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="achievement-icon">��</div>
+                <h3>7 Public Repositories</h3>
+                <p>Active projects spanning security, automation, and systems</p>
+            </div>
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="achievement-icon">🏆</div>
+                <h3>Problem Solver</h3>
+                <p>Built tools solving real security and automation challenges</p>
+            </div>
+            <div class="achievement-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="achievement-icon">🚀</div>
+                <h3>Quick Learner</h3>
+                <p>Rapidly acquiring skills in security, systems, and architecture</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GITHUB STATS SECTION -->
+    <section class="github-stats">
+        <h2 class="section-title" data-aos="fade-up">GitHub Activity</h2>
+        <div class="stats-grid">
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Total Stars</div>
+            </div>
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="150">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Public Repos</div>
+            </div>
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="200">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Commits</div>
+            </div>
+            <div class="stat-box" data-aos="zoom-in" data-aos-delay="250">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Featured Projects</div>
+            </div>
+        </div>
+
+        <!-- CONTRIBUTION GRAPH -->
+        <div class="contribution-graph" data-aos="fade-up" data-aos-delay="300">
+            <h3>Contribution Activity (Last 12 Weeks)</h3>
+            <div class="contribution-months">
+                <div>
+                    <div class="contribution-month">
+                        <div class="contribution-day level4"></div>
+                        <div class="contribution-day level3"></div>
+                        <div class="contribution-day level2"></div>
+                        <div class="contribution-day level1"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day level2"></div>
+                        <div class="contribution-day level3"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="contribution-month">
+                        <div class="contribution-day level3"></div>
+                        <div class="contribution-day level2"></div>
+                        <div class="contribution-day level4"></div>
+                        <div class="contribution-day level3"></div>
+                        <div class="contribution-day level2"></div>
+                        <div class="contribution-day level1"></div>
+                        <div class="contribution-day"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="contribution-month">
+                        <div class="contribution-day level2"></div>
+                        <div class="contribution-day level3"></div>
+                        <div class="contribution-day level4"></div>
+                        <div class="contribution-day level3"></div>
+                        <div class="contribution-day level2"></div>
+                        <div class="contribution-day level1"></div>
+                        <div class="contribution-day"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="contribution-month">
+                        <div class="contribution-day level4"></div>
+                        <div class="contribution-day level3"></div>
+                        <div class="contribution-day level2"></div>
+                        <div class="contribution-day level1"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day level3"></div>
+                        <div class="contribution-day level4"></div>
+                    </div>
+                </div>
+            </div>
+            <p style="color: var(--secondary-text); font-size: 0.85rem; margin-top: 1rem;">
+                <i class="fas fa-square" style="color: #c6e48b; margin-right: 0.5rem;"></i>1-5
+                <i class="fas fa-square" style="color: #7bc96f; margin-left: 1rem; margin-right: 0.5rem;"></i>6-10
+                <i class="fas fa-square" style="color: #239a3b; margin-left: 1rem; margin-right: 0.5rem;"></i>11-15
+                <i class="fas fa-square" style="color: #196127; margin-left: 1rem; margin-right: 0.5rem;"></i>16+
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>
+        <div class="contact-container">
+            <p class="contact-intro" data-aos="fade-up" data-aos-delay="100">
+                Have a project in mind? Want to collaborate? Or just say hi? I'm always open to opportunities, feedback, and conversations about security, Linux, and building great tools.
+            </p>
+
+            <form id="contactForm" data-aos="fade-up" data-aos-delay="150">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Let's work together">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell me about your idea..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+                <div id="formMessage" class="form-message"></div>
+            </form>
+
+            <!-- CONTACT INFO -->
+            <div style="margin-top: 2rem; padding: 1.5rem; background-color: var(--accent-light); border-radius: 8px; text-align: center;" data-aos="fade-up">
+                <h3 style="color: var(--accent-color); margin-bottom: 1rem;">Get In Touch</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                    <a href="https://github.com/Ritusmin325k" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div style="padding: 1rem; background-color: var(--primary-bg); border-radius: 6px;">
+                            <i class="fab fa-github" style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                            <div style="font-weight: 600;">GitHub</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary-text);">@Ritusmin325k</div>
+                        </div>
+                    </a>
+                    <div style="padding: 1rem; background-color: var(--primary-bg); border-radius: 6px;">
+                        <i class="fas fa-envelope" style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                        <div style="font-weight: 600;">Email</div>
+                        <div style="font-size: 0.85rem; color: var(--secondary-text);">ritusminwebsite@gmail.com</div>
+                    </div>
+                    <a href="https://instagram.com/196.235.251.10" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div style="padding: 1rem; background-color: var(--primary-bg); border-radius: 6px;">
+                            <i class="fab fa-instagram" style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                            <div style="font-weight: 600;">Instagram</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary-text);">196.235.251.10</div>
+                        </div>
+                    </a>
+                    <a href="https://t.me/phantomratv2" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div style="padding: 1rem; background-color: var(--primary-bg); border-radius: 6px;">
+                            <i class="fab fa-telegram" style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
+                            <div style="font-weight: 600;">Telegram</div>
+                            <div style="font-size: 0.85rem; color: var(--secondary-text);">@Unknown325k</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+                    <li><a href="#under-development"><i class="fas fa-rocket"></i> In Development</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Projects</h3>
+                <ul>
+                    <li><a href="https://github.com/Ritusmin325k/PhantomRAT" target="_blank"><i class="fab fa-github"></i> PhantomRAT</a></li>
+                    <li><a href="https://github.com/Ritusmin325k/Advance_Ip_Changer" target="_blank"><i class="fab fa-github"></i> IP Changer</a></li>
+                    <li><a href="https://github.com/Ritusmin325k/Fast-Editor-fe-" target="_blank"><i class="fab fa-github"></i> Fast Editor</a></li>
+                    <li><a href="https://github.com/Ritusmin325k/Termux-file-manager" target="_blank"><i class="fab fa-github"></i> File Manager</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social</h3>
+                <div class="social-links">
+                    <a href="https://github.com/Ritusmin325k" target="_blank" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com/196.235.251.10" target="_blank" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:ritusminwebsite@gmail.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ritus Min. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #da3633;"></i> for security and systems</p>
+        </div>
+    </footer>
+
+    <!-- PRIVACY POLICY SMALL POPUP -->
+    <div id="privacyPolicyPopup" class="modal privacy-popup">
+        <div class="privacy-popup-content">
+            <p>By clicking the accept button you agree to our <a href="#" onclick="showFullPrivacy(event)" style="color: var(--accent-color); text-decoration: underline; cursor: pointer;">privacy policy</a></p>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <button onclick="acceptPrivacyPolicy()" class="btn btn-primary" style="flex: 1; padding: 0.6rem;">
+                    Accept
+                </button>
+                <button onclick="closePrivacyPopup()" class="btn btn-secondary" style="flex: 1; padding: 0.6rem;">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FULL PRIVACY POLICY MODAL -->
+    <div id="privacyPolicyModal" class="modal">
+        <div class="modal-content" style="max-width: 600px; max-height: 90vh; overflow-y: auto;">
+            <span class="modal-close" onclick="closeFullPrivacy()">&times;</span>
+            <h2 class="modal-title">Privacy Policy</h2>
+            
+            <h4>Last Updated: February 2025</h4>
+            
+            <h4>1. Information We Collect</h4>
+            <p>
+                When you use our portfolio website and submit the contact form, we collect:
+            </p>
+            <ul>
+                <li><strong>Your IP Address:</strong> Automatically saved in our servers when you visit or submit a form</li>
+                <li><strong>Contact Form Data:</strong> Your name, email, and message when you submit the contact form</li>
+                <li><strong>Browser Information:</strong> User agent and device information for analytics</li>
+            </ul>
+
+            <h4>2. How We Use Your Information</h4>
+            <ul>
+                <li>To respond to your contact form inquiries</li>
+                <li>To improve our website performance and security</li>
+                <li>To analyze website usage patterns</li>
+                <li>For security and fraud prevention purposes</li>
+            </ul>
+
+            <h4>3. IP Address Storage</h4>
+            <p>
+                <strong>We store your IP address in our servers</strong> for the following purposes:
+            </p>
+            <ul>
+                <li>Security monitoring and threat detection</li>
+                <li>Server logs and analytics</li>
+                <li>Preventing abuse and spam</li>
+                <li>Complying with legal requirements</li>
+            </ul>
+
+            <h4>4. Data Security</h4>
+            <p>
+                We take your privacy seriously and use industry-standard security measures to protect your data. However, no method of internet transmission is 100% secure.
+            </p>
+
+            <h4>5. Third-Party Services</h4>
+            <p>
+                This website uses:
+            </p>
+            <ul>
+                <li><strong>Formspree:</strong> For contact form handling. Your form data is sent to Formspree and then to our email.</li>
+                <li><strong>Google Fonts & Icons:</strong> For website styling</li>
+                <li><strong>Animate On Scroll (AOS):</strong> For animation effects</li>
+            </ul>
+
+            <h4>6. Cookies</h4>
+            <p>
+                We use localStorage for theme preferences (light/dark mode). This data is stored locally on your device only.
+            </p>
+
+            <h4>7. Your Rights</h4>
+            <p>
+                You have the right to request information about what personal data we collect, and you may request deletion of your data by contacting us via email.
+            </p>
+
+            <h4>8. Contact Us</h4>
+            <p>
+                If you have questions about this privacy policy, contact us at: <strong>ritusminwebsite@gmail.com</strong>
+            </p>
+
+            <h4>9. Changes to Policy</h4>
+            <p>
+                We may update this policy from time to time. We will notify you of any changes by posting the new policy on this page.
+            </p>
+
+            <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center;">
+                <button onclick="acceptPrivacyPolicy()" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-check"></i> I Accept
+                </button>
+                <p style="font-size: 0.85rem; color: var(--secondary-text); margin-top: 1rem;">
+                    You can change your choice anytime in your browser settings.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
