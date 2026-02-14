@@ -161,50 +161,37 @@ function setupContactForm() {
         const submitBtn = form.querySelector('.form-submit');
         const formMessage = document.getElementById('formMessage');
         
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Basic validation
+        if (!name || !email || !subject || !message) {
+            formMessage.classList.add('error');
+            formMessage.classList.remove('success');
+            formMessage.textContent = '❌ Please fill in all fields';
+            return;
+        }
 
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
+        formMessage.textContent = '';
 
-        // Create email body
-        const emailBody = `
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
-
-Message:
-${message}
-`;
-
-        // Fallback: Create mailto link as backup
-        const mailtoLink = `mailto:ritusminwebsite@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-
-        // Try to send via formspree (will fail gracefully)
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('subject', subject);
-        formData.append('message', message);
-
-        // Attempt to send
-        Promise.race([
-            fetch('https://formspree.io/f/ritusminwebsite@gmail.com', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }),
-            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000))
-        ])
-        .then(response => {
+        // Send to Netlify Function
+        fetch('/.netlify/functions/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, subject, message })
+        })
+        .then(response => response.json())
+        .then(data => {
             submitBtn.disabled = false;
             submitBtn.textContent = 'Send Message';
 
-            if (response.ok) {
+            if (data.success) {
                 formMessage.classList.add('success');
                 formMessage.classList.remove('error');
                 formMessage.textContent = '✅ Message sent successfully! I\'ll reply soon.';
@@ -213,26 +200,20 @@ ${message}
                     formMessage.classList.remove('success');
                 }, 5000);
             } else {
-                // If API fails, show success anyway (user can email directly)
-                formMessage.classList.add('success');
-                formMessage.classList.remove('error');
-                formMessage.textContent = '✅ Message received! I\'ll get back to you soon.';
-                form.reset();
-                setTimeout(() => {
-                    formMessage.classList.remove('success');
-                }, 5000);
+                formMessage.classList.add('error');
+                formMessage.classList.remove('success');
+                formMessage.textContent = '❌ ' + (data.error || 'Failed to send message');
             }
         })
         .catch(error => {
+            console.error('Error:', error);
             submitBtn.disabled = false;
             submitBtn.textContent = 'Send Message';
-            formMessage.classList.add('success');
-            formMessage.classList.remove('error');
-            formMessage.textContent = '✅ Message received! I\'ll get back to you soon.';
-            form.reset();
-            setTimeout(() => {
-                formMessage.classList.remove('success');
-            }, 5000);
+            formMessage.classList.add('error');
+            formMessage.classList.remove('success');
+            formMessage.textContent = '❌ Network error. Please try again or email directly.';
+        });
+    });
         });
     });
 }
