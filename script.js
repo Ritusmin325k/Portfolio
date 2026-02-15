@@ -178,8 +178,8 @@ function setupContactForm() {
         submitBtn.textContent = 'Sending...';
         formMessage.textContent = '';
 
-        // Send to Netlify Function
-        fetch('/.netlify/functions/send-email', {
+        // Send to Formspree
+        fetch('https://formspree.io/f/xyzpqkqp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -191,7 +191,7 @@ function setupContactForm() {
             submitBtn.disabled = false;
             submitBtn.textContent = 'Send Message';
 
-            if (data.success) {
+            if (data.ok) {
                 formMessage.classList.add('success');
                 formMessage.classList.remove('error');
                 formMessage.textContent = '✅ Message sent successfully! I\'ll reply soon.';
@@ -212,8 +212,6 @@ function setupContactForm() {
             formMessage.classList.add('error');
             formMessage.classList.remove('success');
             formMessage.textContent = '❌ Network error. Please try again or email directly.';
-        });
-    });
         });
     });
 }
