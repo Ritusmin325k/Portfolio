@@ -10,82 +10,119 @@
     <meta property="og:title" content="Ritus Min - Security Engineer">
     <meta property="og:description" content="Building security tools, Linux automation, and ethical hacking solutions.">
     <meta property="og:type" content="website">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230969da'>⚙️</text></svg>">
-    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%2300d4aa'>⚙️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- MORPHING BACKGROUND SHAPES -->
+    <div class="morph-bg-1"></div>
+    <div class="morph-bg-2"></div>
+
     <!-- SCROLL PROGRESS BAR -->
-    <div class="scroll-progress"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
 
     <!-- BACK TO TOP BUTTON -->
-    <button class="back-to-top" id="backToTop">
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- NAVBAR -->
-    <nav>
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="https://github.com/Ritusmin325k" class="nav-brand" target="_blank">Ritusmin</a>
-            <button class="hamburger" id="hamburger">
+            <a href="https://github.com/Ritusmin325k" class="nav-brand" target="_blank" rel="noopener">Ritusmin</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link active">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#under-development" class="nav-link">In Development</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="#about" class="nav-link active" role="menuitem">About</a></li>
+                <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#under-development" class="nav-link" role="menuitem">In Development</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+                <li role="none">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <video autoplay muted loop class="hero-video" playsinline>
+    <section class="hero" id="home" aria-label="Hero section">
+        <video autoplay muted loop class="hero-video" playsinline aria-hidden="true" poster="src/assets/binary_code.png">
             <source src="src/assets/1stvideo.mp4" type="video/mp4">
-            Your browser doesn't support HTML5 video.
         </video>
+        <div class="hero-shapes">
+            <div class="hero-shape-element"></div>
+            <div class="hero-shape-element"></div>
+            <div class="hero-shape-element"></div>
+            <div class="hero-shape-element"></div>
+            <div class="hero-shape-element"></div>
+        </div>
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="hero-liquid"></div>
+        <div class="hero-3d" style="top: 20%; right: 15%;">
+            <div class="hero-vr-cube">
+                <div class="vr-face front"></div>
+                <div class="vr-face back"></div>
+                <div class="vr-face right"></div>
+                <div class="vr-face left"></div>
+                <div class="vr-face top"></div>
+                <div class="vr-face bottom"></div>
+            </div>
+            <div class="hero-vr-ring"></div>
+            <div class="hero-vr-ring"></div>
+        </div>
         <div class="hero-content">
-            <h2 data-aos="fade-up" style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-text); font-weight: 600;">
-                Hello, I am Ritusmin Saikia
-            </h2>
-            <h1 data-aos="fade-up" data-aos-delay="50">
-                <span class="typing-text">Python Developer</span>
+            <div class="hero-badge shimmer" data-aos="fade-up">
+                <span class="pulse" aria-hidden="true"></span>
+                <span>Available for projects</span>
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="100">
+                Hello, I'm <span class="highlight gradient-text">Ritusmin Saikia</span>
             </h1>
-            <p data-aos="fade-up" data-aos-delay="100">
-                🐍 Python Developer | 🐧 Linux Enthusiast | 🔒 Cybersecurity Learner
-                <br>
+            <h2 data-aos="fade-up" data-aos-delay="150">
+                <span class="typing-text">Python Developer</span>
+            </h2>
+            <p data-aos="fade-up" data-aos-delay="200">
                 Building security tools, automation scripts, and learning systems deeply.
+                Passionate about cybersecurity, Linux, and creating impactful projects.
             </p>
-            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://github.com/Ritusmin325k" class="btn btn-primary" target="_blank">
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://github.com/Ritusmin325k" class="btn btn-primary" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> View on GitHub
                 </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Let's Talk
+                <a href="#projects" class="btn btn-secondary">
+                    <i class="fas fa-code"></i> My Projects
                 </a>
             </div>
         </div>
     </section>
 
     <!-- ABOUT SECTION -->
-    <section class="about" id="about">
+    <section class="about" id="about" aria-label="About me">
         <h2 class="section-title" data-aos="fade-up">About Me</h2>
         <div class="about-content">
             <p data-aos="fade-up" data-aos-delay="100">
-                Hey, I'm Ritusmin Saikia, a Class 9 student who loves Python, Linux, and cybersecurity. I'm deeply curious about how systems work internally, and I enjoy building small tools and automation projects that solve practical problems and help me understand technology at a deeper level.
+                Hey, I'm <strong>Ritusmin Saikia</strong>, a Class 9 student who loves Python, Linux, and cybersecurity. I'm deeply curious about how systems work internally, and I enjoy building small tools and automation projects that solve practical problems and help me understand technology at a deeper level.
             </p>
             <p data-aos="fade-up" data-aos-delay="150">
                 I started my journey by exploring programming basics and networking, and over time I moved into Linux environments, security concepts, and terminal-based development. I learn mainly by experimenting, practicing every day, and turning ideas into real working projects. Each build teaches me something new and pushes my skills a little further.
@@ -96,31 +133,31 @@
 
             <!-- LEARNING JOURNEY TIMELINE -->
             <div style="margin-top: 3rem;" data-aos="fade-up" data-aos-delay="250">
-                <h3 style="color: var(--accent-color); margin-bottom: 1.5rem; font-size: 1.2rem;">Learning Journey</h3>
+                <h3 style="color: var(--accent-color); margin-bottom: 1.5rem; font-size: 1.2rem; text-align: center;">Learning Journey</h3>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="timeline-icon">1</div>
+                        <div class="timeline-icon"><i class="fas fa-seedling"></i></div>
                         <div class="timeline-content">
                             <h3>Foundations (2024)</h3>
                             <p>Started with Python basics, command line, and understanding fundamentals of programming.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-icon">2</div>
+                        <div class="timeline-icon"><i class="fab fa-python"></i></div>
                         <div class="timeline-content">
                             <h3>Python Programming (2025 Early)</h3>
                             <p>Deep dive into Python, building automation scripts, and mastering scripting fundamentals.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-icon">3</div>
+                        <div class="timeline-icon"><i class="fab fa-linux"></i></div>
                         <div class="timeline-content">
                             <h3>Linux & System (2025 Mid)</h3>
                             <p>Learning Linux internals, shell scripting, system administration, and process management.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-icon">4</div>
+                        <div class="timeline-icon"><i class="fas fa-shield-alt"></i></div>
                         <div class="timeline-content">
                             <h3>Networking & Security Tools (Currently)</h3>
                             <p>Building security tools, learning networking concepts, and exploring cybersecurity fundamentals.</p>
@@ -132,11 +169,14 @@
     </section>
 
     <!-- SKILLS SECTION -->
-    <section class="skills" id="skills">
+    <section class="skills" id="skills" aria-label="Skills and expertise">
         <h2 class="section-title" data-aos="fade-up">Skills & Expertise</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">
+            Technologies and tools I work with
+        </p>
         <div class="skills-container">
             <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                <h3>🐍 Programming</h3>
+                <h3><i class="fab fa-python"></i> Programming</h3>
                 <div class="skill-item">
                     <div class="skill-name">
                         Python
@@ -149,7 +189,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         Shell / Bash
-                        <span class="skill-proficiency">Beginner → Intermediate</span>
+                        <span class="skill-proficiency">Intermediate</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 60%;"></div>
@@ -172,7 +212,7 @@
             </div>
 
             <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
-                <h3>🐧 Systems & Tools</h3>
+                <h3><i class="fab fa-linux"></i> Systems & Tools</h3>
                 <div class="skill-item">
                     <div class="skill-name">
                         Linux
@@ -185,7 +225,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         Networking
-                        <span class="skill-proficiency">Beginner → Intermediate</span>
+                        <span class="skill-proficiency">Intermediate</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 55%;"></div>
@@ -208,7 +248,7 @@
             </div>
 
             <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                <h3>🔒 Security & Learning</h3>
+                <h3><i class="fas fa-shield-alt"></i> Security & Learning</h3>
                 <div class="skill-item">
                     <div class="skill-name">
                         Cybersecurity Fundamentals
@@ -230,7 +270,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         Ethical Hacking
-                        <span class="skill-proficiency">Beginner → Intermediate</span>
+                        <span class="skill-proficiency">Intermediate</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 50%;"></div>
@@ -240,92 +280,6 @@
                     <span class="tech-badge">Privacy Tools</span>
                     <span class="tech-badge">Security Tools</span>
                     <span class="tech-badge">Learning</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CURRENTLY LEARNING SECTION -->
-    <section class="skills" style="background-color: var(--primary-bg);" id="learning">
-        <h2 class="section-title" data-aos="fade-up">Currently Learning</h2>
-        <div class="skills-container">
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                <h3>📚 Active Learning</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        Linux
-                        <span class="skill-proficiency">Intermediate</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 65%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        Networking
-                        <span class="skill-proficiency">Beginner → Intermediate</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 55%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        Cybersecurity Fundamentals
-                        <span class="skill-proficiency">Beginner</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 45%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        Python
-                        <span class="skill-proficiency">Intermediate</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
-                <h3>🔧 Development & Tools</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        Shell / Bash
-                        <span class="skill-proficiency">Beginner → Intermediate</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 60%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        Git & GitHub
-                        <span class="skill-proficiency">Intermediate</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 65%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        AI / ML Foundations
-                        <span class="skill-proficiency">Beginner</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 40%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        System Design
-                        <span class="skill-proficiency">Beginner</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 45%;"></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -489,7 +443,7 @@
                         <span class="tech-tag">Security</span>
                     </div>
                     <div class="under-dev-placeholder" style="margin: 1rem 0; border-radius: 6px; overflow: hidden;">
-                        <img src="screenshot.jpg" alt="PhantomRAT-V2 Screenshot" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+                        <img src="screenshot.jpg" alt="PhantomRAT-V2 Screenshot" loading="lazy" style="width: 100%; height: auto; display: block; border-radius: 6px;">
                     </div>
                     <p style="font-size: 0.85rem; color: var(--secondary-text); text-align: center; margin-top: 0.5rem;">
                         ETA: Coming Soon
@@ -684,14 +638,13 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" aria-label="Contact me">
         <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">
+            Have a project in mind? Want to collaborate? Or just say hi?
+        </p>
         <div class="contact-container">
-            <p class="contact-intro" data-aos="fade-up" data-aos-delay="100">
-                Have a project in mind? Want to collaborate? Or just say hi? I'm always open to opportunities, feedback, and conversations about security, Linux, and building great tools.
-            </p>
-
-            <form id="contactForm" data-aos="fade-up" data-aos-delay="150">
+            <form id="contactForm" data-aos="fade-up" data-aos-delay="150" aria-label="Contact form">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -708,39 +661,35 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" required placeholder="Tell me about your idea..."></textarea>
                 </div>
-                <button type="submit" class="form-submit">Send Message</button>
-                <div id="formMessage" class="form-message"></div>
+                <button type="submit" class="form-submit">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+                <div id="formMessage" class="form-message" role="alert"></div>
             </form>
 
             <!-- CONTACT INFO -->
-            <div style="margin-top: 2rem; padding: 1.5rem; background-color: var(--accent-light); border-radius: 8px; text-align: center;" data-aos="fade-up">
-                <h3 style="color: var(--accent-color); margin-bottom: 1rem;">Get In Touch</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
-                    <a href="https://github.com/Ritusmin325k" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div style="padding: 1rem; background-color: var(--primary-bg); border-radius: 6px;">
-                            <i class="fab fa-github" style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                            <div style="font-weight: 600;">GitHub</div>
-                            <div style="font-size: 0.85rem; color: var(--secondary-text);">@Ritusmin325k</div>
-                        </div>
+            <div class="contact-info" data-aos="fade-up">
+                <h3>Get In Touch</h3>
+                <div class="contact-cards">
+                    <a href="https://github.com/Ritusmin325k" target="_blank" rel="noopener" class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <span class="card-title">GitHub</span>
+                        <span class="card-value">@Ritusmin325k</span>
                     </a>
-                    <div style="padding: 1rem; background-color: var(--primary-bg); border-radius: 6px;">
-                        <i class="fas fa-envelope" style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                        <div style="font-weight: 600;">Email</div>
-                        <div style="font-size: 0.85rem; color: var(--secondary-text);">ritusminwebsite@gmail.com</div>
-                    </div>
-                    <a href="https://instagram.com/196.235.251.10" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div style="padding: 1rem; background-color: var(--primary-bg); border-radius: 6px;">
-                            <i class="fab fa-instagram" style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                            <div style="font-weight: 600;">Instagram</div>
-                            <div style="font-size: 0.85rem; color: var(--secondary-text);">196.235.251.10</div>
-                        </div>
+                    <a href="mailto:ritusminwebsite@gmail.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <span class="card-title">Email</span>
+                        <span class="card-value">ritusminwebsite@gmail.com</span>
                     </a>
-                    <a href="https://t.me/phantomratv2" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div style="padding: 1rem; background-color: var(--primary-bg); border-radius: 6px;">
-                            <i class="fab fa-telegram" style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 0.5rem;"></i>
-                            <div style="font-weight: 600;">Telegram</div>
-                            <div style="font-size: 0.85rem; color: var(--secondary-text);">@Unknown325k</div>
-                        </div>
+                    <a href="https://instagram.com/196.235.251.10" target="_blank" rel="noopener" class="contact-card">
+                        <i class="fab fa-instagram"></i>
+                        <span class="card-title">Instagram</span>
+                        <span class="card-value">196.235.251.10</span>
+                    </a>
+                    <a href="https://t.me/phantomratv2" target="_blank" rel="noopener" class="contact-card">
+                        <i class="fab fa-telegram"></i>
+                        <span class="card-title">Telegram</span>
+                        <span class="card-value">@Unknown325k</span>
                     </a>
                 </div>
             </div>
@@ -748,13 +697,14 @@
     </section>
 
     <!-- FOOTER -->
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#skills"><i class="fas fa-cogs"></i> Skills</a></li>
                     <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
                     <li><a href="#under-development"><i class="fas fa-rocket"></i> In Development</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -763,44 +713,41 @@
             <div class="footer-section">
                 <h3>Projects</h3>
                 <ul>
-                    <li><a href="https://github.com/Ritusmin325k/PhantomRAT" target="_blank"><i class="fab fa-github"></i> PhantomRAT</a></li>
-                    <li><a href="https://github.com/Ritusmin325k/Advance_Ip_Changer" target="_blank"><i class="fab fa-github"></i> IP Changer</a></li>
-                    <li><a href="https://github.com/Ritusmin325k/Fast-Editor-fe-" target="_blank"><i class="fab fa-github"></i> Fast Editor</a></li>
-                    <li><a href="https://github.com/Ritusmin325k/Termux-file-manager" target="_blank"><i class="fab fa-github"></i> File Manager</a></li>
+                    <li><a href="https://github.com/Ritusmin325k/PhantomRAT" target="_blank" rel="noopener"><i class="fab fa-github"></i> PhantomRAT</a></li>
+                    <li><a href="https://github.com/Ritusmin325k/Advance_Ip_Changer" target="_blank" rel="noopener"><i class="fab fa-github"></i> IP Changer</a></li>
+                    <li><a href="https://github.com/Ritusmin325k/Fast-Editor-fe-" target="_blank" rel="noopener"><i class="fab fa-github"></i> Fast Editor</a></li>
+                    <li><a href="https://github.com/Ritusmin325k/Termux-file-manager" target="_blank" rel="noopener"><i class="fab fa-github"></i> File Manager</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Social</h3>
                 <div class="social-links">
-                    <a href="https://github.com/Ritusmin325k" target="_blank" class="social-link" title="GitHub">
+                    <a href="https://github.com/Ritusmin325k" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://instagram.com/196.235.251.10" target="_blank" class="social-link" title="Instagram">
+                    <a href="https://instagram.com/196.235.251.10" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="mailto:ritusminwebsite@gmail.com" class="social-link" title="Email">
+                    <a href="mailto:ritusminwebsite@gmail.com" class="social-link" aria-label="Email">
                         <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://t.me/phantomratv2" target="_blank" rel="noopener" class="social-link" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
                     </a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Ritusmin Saikia. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: #da3633;"></i> for security and systems</p>
+            <p>&copy; 2026 Ritusmin Saikia. All rights reserved. | Crafted with <span class="heart heartbeat"><i class="fas fa-heart"></i></span> for security and systems</p>
         </div>
     </footer>
 
-    <!-- PRIVACY POLICY SMALL POPUP -->
-    <div id="privacyPolicyPopup" class="modal privacy-popup">
-        <div class="privacy-popup-content">
-            <p>By clicking the accept button you agree to our <a href="#" onclick="showFullPrivacy(event)" style="color: var(--accent-color); text-decoration: underline; cursor: pointer;">privacy policy</a></p>
-            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                <button onclick="acceptPrivacyPolicy()" class="btn btn-primary" style="flex: 1; padding: 0.6rem;">
-                    Accept
-                </button>
-                <button onclick="closePrivacyPopup()" class="btn btn-secondary" style="flex: 1; padding: 0.6rem;">
-                    Decline
-                </button>
-            </div>
+    <!-- PRIVACY BANNER (Subtle) -->
+    <div id="privacyBanner" class="privacy-banner">
+        <p>We collect basic visitor data to improve your experience. By continuing, you agree to our <a href="#" onclick="showFullPrivacy(event)">Privacy Policy</a></p>
+        <div class="privacy-banner-buttons">
+            <button onclick="declinePrivacy()" class="btn btn-secondary">Decline</button>
+            <button onclick="acceptPrivacy()" class="btn btn-primary">Accept</button>
         </div>
     </div>
 
