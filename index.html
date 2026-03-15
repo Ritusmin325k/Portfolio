@@ -10,6 +10,13 @@
     <meta property="og:title" content="Ritus Min - Security Engineer">
     <meta property="og:description" content="Building security tools, Linux automation, and ethical hacking solutions.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ritusmin.netlify.app">
+    <meta property="og:image" content="https://ritusmin.netlify.app/src/assets/binary_code.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ritus Min - Security Engineer & Linux Developer">
+    <meta name="twitter:description" content="Python developer, Linux enthusiast, cybersecurity learner. Building security tools and automation.">
+    <meta name="twitter:image" content="https://ritusmin.netlify.app/src/assets/binary_code.png">
+    <link rel="canonical" href="https://ritusmin.netlify.app">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%2300d4aa'>⚙️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -290,16 +297,16 @@
         <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
 
         <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
-            <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
-            <button class="filter-btn" onclick="filterProjects('security')">Security Tools</button>
-            <button class="filter-btn" onclick="filterProjects('systems')">System Tools</button>
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="security">Security Tools</button>
+            <button class="filter-btn" data-filter="systems">System Tools</button>
         </div>
 
         <div class="projects-grid">
             <!-- PROJECT 1 -->
             <div class="project-card" data-category="security" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%); font-size: 2.5rem;">
-                    <i class="fas fa-mobile-alt"></i>
+                <div class="project-image">
+                    <img src="Phantom.jpg" alt="PhantomRAT" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">PhantomRAT</h3>
@@ -319,7 +326,7 @@
                         <a href="https://github.com/Ritusmin325k/PhantomRAT" class="project-link" target="_blank">
                             <i class="fab fa-github"></i> Code
                         </a>
-                        <a href="javascript:void(0)" onclick="openProjectModal('phantom')" class="project-link">
+                        <a href="#" class="project-link" data-modal="phantomModal">
                             <i class="fas fa-info-circle"></i> Details
                         </a>
                     </div>
@@ -328,8 +335,8 @@
 
             <!-- PROJECT 2 -->
             <div class="project-card" data-category="security" data-aos="fade-up" data-aos-delay="150">
-                <div class="project-image" style="background: linear-gradient(135deg, #5f27cd 0%, #341f97 100%); font-size: 2.5rem;">
-                    <i class="fas fa-globe"></i>
+                <div class="project-image">
+                    <img src="Ip_changer.png" alt="Advance IP Changer" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Advance IP Changer</h3>
@@ -349,7 +356,7 @@
                         <a href="https://github.com/Ritusmin325k/Advance_Ip_Changer" class="project-link" target="_blank">
                             <i class="fab fa-github"></i> Code
                         </a>
-                        <a href="javascript:void(0)" onclick="openProjectModal('ipchanger')" class="project-link">
+                        <a href="#" class="project-link" data-modal="ipchangerModal">
                             <i class="fas fa-info-circle"></i> Details
                         </a>
                     </div>
@@ -358,8 +365,8 @@
 
             <!-- PROJECT 3 -->
             <div class="project-card" data-category="systems" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-image" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); font-size: 2.5rem;">
-                    <i class="fas fa-code"></i>
+                <div class="project-image">
+                    <img src="fast.png" alt="Fast Editor" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Fast Editor</h3>
@@ -379,7 +386,7 @@
                         <a href="https://github.com/Ritusmin325k/Fast-Editor-fe-" class="project-link" target="_blank">
                             <i class="fab fa-github"></i> Code
                         </a>
-                        <a href="javascript:void(0)" onclick="openProjectModal('fasteditor')" class="project-link">
+                        <a href="#" class="project-link" data-modal="fasteditorModal">
                             <i class="fas fa-info-circle"></i> Details
                         </a>
                     </div>
@@ -388,8 +395,8 @@
 
             <!-- PROJECT 4 -->
             <div class="project-card" data-category="systems" data-aos="fade-up" data-aos-delay="250">
-                <div class="project-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); font-size: 2.5rem;">
-                    <i class="fas fa-folder-open"></i>
+                <div class="project-image">
+                    <img src="Termux.png" alt="Termux File Manager" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Termux File Manager</h3>
@@ -409,7 +416,7 @@
                         <a href="https://github.com/Ritusmin325k/Termux-file-manager" class="project-link" target="_blank">
                             <i class="fab fa-github"></i> Code
                         </a>
-                        <a href="javascript:void(0)" onclick="openProjectModal('filemanager')" class="project-link">
+                        <a href="#" class="project-link" data-modal="filemanagerModal">
                             <i class="fas fa-info-circle"></i> Details
                         </a>
                     </div>
@@ -443,7 +450,7 @@
                         <span class="tech-tag">Security</span>
                     </div>
                     <div class="under-dev-placeholder" style="margin: 1rem 0; border-radius: 6px; overflow: hidden;">
-                        <img src="screenshot.jpg" alt="PhantomRAT-V2 Screenshot" loading="lazy" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+                        <img src="src/assets/screenshot.jpg" alt="PhantomRAT-V2 interface preview showing the Android RAT control panel" style="width: 100%; height: auto; display: block; border-radius: 6px;">
                     </div>
                     <p style="font-size: 0.85rem; color: var(--secondary-text); text-align: center; margin-top: 0.5rem;">
                         ETA: Coming Soon
@@ -456,7 +463,7 @@
     <!-- PROJECT MODALS -->
     <div id="phantomModal" class="modal">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeProjectModal('phantom')">&times;</span>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 class="modal-title">PhantomRAT</h2>
             <h4>Android Remote Access Tool</h4>
             <p><strong>Problem:</strong> Security researchers need tools to demonstrate Android vulnerabilities in controlled environments.</p>
@@ -475,7 +482,7 @@
 
     <div id="ipchangerModal" class="modal">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeProjectModal('ipchanger')">&times;</span>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 class="modal-title">Advance IP Changer</h2>
             <h4>Privacy Tool with Automatic IP Rotation</h4>
             <p><strong>Problem:</strong> Users on mobile/Termux need privacy without root access.</p>
@@ -494,7 +501,7 @@
 
     <div id="fasteditorModal" class="modal">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeProjectModal('fasteditor')">&times;</span>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 class="modal-title">Fast Editor</h2>
             <h4>Lightweight Terminal File Editor</h4>
             <p><strong>Problem:</strong> Terminal users need a fast, intuitive text editor with minimal dependencies.</p>
@@ -513,7 +520,7 @@
 
     <div id="filemanagerModal" class="modal">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeProjectModal('filemanager')">&times;</span>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 class="modal-title">Termux File Manager</h2>
             <h4>Web-Based File Management for Terminals</h4>
             <p><strong>Problem:</strong> Termux users need an intuitive way to manage files without leaving the terminal ecosystem.</p>
@@ -535,24 +542,24 @@
         <h2 class="section-title" data-aos="fade-up">Achievements & Stats</h2>
         <div class="achievements-grid">
             <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="achievement-icon">⭐</div>
-                <h3>30+ GitHub Stars</h3>
+                <div class="achievement-icon"><i class="fas fa-star"></i></div>
+                <h3>32+ GitHub Stars</h3>
                 <p>Total stars across projects—recognition from the community</p>
             </div>
             <div class="achievement-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="achievement-icon">��</div>
+                <div class="achievement-icon"><i class="fas fa-folder-open"></i></div>
                 <h3>7 Public Repositories</h3>
                 <p>Active projects spanning security, automation, and systems</p>
             </div>
             <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="achievement-icon">🏆</div>
-                <h3>Problem Solver</h3>
-                <p>Built tools solving real security and automation challenges</p>
+                <div class="achievement-icon"><i class="fas fa-code-branch"></i></div>
+                <h3>6+ Forks</h3>
+                <p>Projects forked and extended by the community</p>
             </div>
             <div class="achievement-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="achievement-icon">🚀</div>
-                <h3>Quick Learner</h3>
-                <p>Rapidly acquiring skills in security, systems, and architecture</p>
+                <div class="achievement-icon"><i class="fas fa-lightbulb"></i></div>
+                <h3>Problem Solver</h3>
+                <p>Built tools solving real security and automation challenges</p>
             </div>
         </div>
     </section>
@@ -562,20 +569,24 @@
         <h2 class="section-title" data-aos="fade-up">GitHub Activity</h2>
         <div class="stats-grid">
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="100">
-                <div class="stat-number">30+</div>
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <div class="stat-number">32+</div>
                 <div class="stat-label">Total Stars</div>
             </div>
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="150">
+                <div class="stat-icon"><i class="fas fa-folder"></i></div>
                 <div class="stat-number">7</div>
                 <div class="stat-label">Public Repos</div>
             </div>
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="200">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Commits</div>
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number">13</div>
+                <div class="stat-label">Followers</div>
             </div>
             <div class="stat-box" data-aos="zoom-in" data-aos-delay="250">
-                <div class="stat-number">4</div>
-                <div class="stat-label">Featured Projects</div>
+                <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                <div class="stat-number">6</div>
+                <div class="stat-label">Forks</div>
             </div>
         </div>
 
@@ -583,56 +594,60 @@
         <div class="contribution-graph" data-aos="fade-up" data-aos-delay="300">
             <h3>Contribution Activity (Last 12 Weeks)</h3>
             <div class="contribution-months">
+                <!-- Week 1-2: December end -->
                 <div>
                     <div class="contribution-month">
-                        <div class="contribution-day level4"></div>
-                        <div class="contribution-day level3"></div>
-                        <div class="contribution-day level2"></div>
-                        <div class="contribution-day level1"></div>
                         <div class="contribution-day"></div>
-                        <div class="contribution-day level2"></div>
-                        <div class="contribution-day level3"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="contribution-month">
-                        <div class="contribution-day level3"></div>
-                        <div class="contribution-day level2"></div>
-                        <div class="contribution-day level4"></div>
-                        <div class="contribution-day level3"></div>
-                        <div class="contribution-day level2"></div>
-                        <div class="contribution-day level1"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
                         <div class="contribution-day"></div>
                     </div>
                 </div>
+                <!-- Week 3-4: Early January -->
                 <div>
                     <div class="contribution-month">
-                        <div class="contribution-day level2"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
                         <div class="contribution-day level3"></div>
-                        <div class="contribution-day level4"></div>
-                        <div class="contribution-day level3"></div>
-                        <div class="contribution-day level2"></div>
-                        <div class="contribution-day level1"></div>
+                        <div class="contribution-day"></div>
                         <div class="contribution-day"></div>
                     </div>
                 </div>
+                <!-- Week 5-8: January-February -->
                 <div>
                     <div class="contribution-month">
-                        <div class="contribution-day level4"></div>
-                        <div class="contribution-day level3"></div>
-                        <div class="contribution-day level2"></div>
-                        <div class="contribution-day level1"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
+                    </div>
+                </div>
+                <!-- Week 9-12: Mid February - March -->
+                <div>
+                    <div class="contribution-month">
+                        <div class="contribution-day"></div>
                         <div class="contribution-day"></div>
                         <div class="contribution-day level3"></div>
                         <div class="contribution-day level4"></div>
+                        <div class="contribution-day level3"></div>
+                        <div class="contribution-day"></div>
+                        <div class="contribution-day"></div>
                     </div>
                 </div>
             </div>
             <p style="color: var(--secondary-text); font-size: 0.85rem; margin-top: 1rem;">
-                <i class="fas fa-square" style="color: #c6e48b; margin-right: 0.5rem;"></i>1-5
-                <i class="fas fa-square" style="color: #7bc96f; margin-left: 1rem; margin-right: 0.5rem;"></i>6-10
-                <i class="fas fa-square" style="color: #239a3b; margin-left: 1rem; margin-right: 0.5rem;"></i>11-15
-                <i class="fas fa-square" style="color: #196127; margin-left: 1rem; margin-right: 0.5rem;"></i>16+
+                <i class="fas fa-square" style="color: #c6e48b; margin-right: 0.5rem;"></i>1-2
+                <i class="fas fa-square" style="color: #7bc96f; margin-left: 1rem; margin-right: 0.5rem;"></i>3-4
+                <i class="fas fa-square" style="color: #239a3b; margin-left: 1rem; margin-right: 0.5rem;"></i>5-7
+                <i class="fas fa-square" style="color: #196127; margin-left: 1rem; margin-right: 0.5rem;"></i>8+
             </p>
         </div>
     </section>
@@ -646,20 +661,20 @@
         <div class="contact-container">
             <form id="contactForm" data-aos="fade-up" data-aos-delay="150" aria-label="Contact form">
                 <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <label for="name">Your Name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe" aria-required="true">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com" aria-required="true">
                 </div>
                 <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required placeholder="Let's work together">
+                    <label for="subject">Subject <span aria-hidden="true">*</span></label>
+                    <input type="text" id="subject" name="subject" required placeholder="Let's work together" aria-required="true">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required placeholder="Tell me about your idea..."></textarea>
+                    <label for="message">Message <span aria-hidden="true">*</span></label>
+                    <textarea id="message" name="message" required placeholder="Tell me about your idea..." aria-required="true"></textarea>
                 </div>
                 <button type="submit" class="form-submit">
                     <i class="fas fa-paper-plane"></i> Send Message
@@ -744,17 +759,17 @@
 
     <!-- PRIVACY BANNER (Subtle) -->
     <div id="privacyBanner" class="privacy-banner">
-        <p>We collect basic visitor data to improve your experience. By continuing, you agree to our <a href="#" onclick="showFullPrivacy(event)">Privacy Policy</a></p>
+        <p>We collect basic visitor data to improve your experience. By continuing, you agree to our <a href="#">Privacy Policy</a></p>
         <div class="privacy-banner-buttons">
-            <button onclick="declinePrivacy()" class="btn btn-secondary">Decline</button>
-            <button onclick="acceptPrivacy()" class="btn btn-primary">Accept</button>
+            <button class="btn btn-secondary">Decline</button>
+            <button class="btn btn-primary">Accept</button>
         </div>
     </div>
 
     <!-- FULL PRIVACY POLICY MODAL -->
     <div id="privacyPolicyModal" class="modal">
         <div class="modal-content" style="max-width: 600px; max-height: 90vh; overflow-y: auto;">
-            <span class="modal-close" onclick="closeFullPrivacy()">&times;</span>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 class="modal-title">Privacy Policy</h2>
             
             <h4>Last Updated: February 2026</h4>
@@ -764,36 +779,28 @@
                 When you use our portfolio website and submit the contact form, we collect:
             </p>
             <ul>
-                <li><strong>Your IP Address:</strong> Automatically saved in our servers when you visit or submit a form</li>
                 <li><strong>Contact Form Data:</strong> Your name, email, and message when you submit the contact form</li>
-                <li><strong>Browser Information:</strong> User agent and device information for analytics</li>
+                <li><strong>Theme Preference:</strong> Your light/dark mode preference (stored locally only)</li>
             </ul>
 
             <h4>2. How We Use Your Information</h4>
             <ul>
                 <li>To respond to your contact form inquiries</li>
-                <li>To improve our website performance and security</li>
-                <li>To analyze website usage patterns</li>
-                <li>For security and fraud prevention purposes</li>
+                <li>To improve website functionality and user experience</li>
+                <li>To remember your theme preference</li>
             </ul>
 
-            <h4>3. IP Address Storage</h4>
+            <h4>3. Data Storage</h4>
             <p>
-                <strong>We store your IP address in our servers</strong> for the following purposes:
+                <strong>We do not store your IP address or any personal data on external servers.</strong> Your theme preference is stored locally in your browser using localStorage.
             </p>
-            <ul>
-                <li>Security monitoring and threat detection</li>
-                <li>Server logs and analytics</li>
-                <li>Preventing abuse and spam</li>
-                <li>Complying with legal requirements</li>
-            </ul>
 
             <h4>4. Data Security</h4>
             <p>
                 We take your privacy seriously and use industry-standard security measures to protect your data. However, no method of internet transmission is 100% secure.
             </p>
 
-            <h4>5. Third-Party Services</h4>
+            <h4>4. Third-Party Services</h4>
             <p>
                 This website uses:
             </p>
@@ -803,28 +810,28 @@
                 <li><strong>Animate On Scroll (AOS):</strong> For animation effects</li>
             </ul>
 
-            <h4>6. Cookies</h4>
+            <h4>5. Cookies & Local Storage</h4>
             <p>
                 We use localStorage for theme preferences (light/dark mode). This data is stored locally on your device only.
             </p>
 
-            <h4>7. Your Rights</h4>
+            <h4>6. Your Rights</h4>
             <p>
                 You have the right to request information about what personal data we collect, and you may request deletion of your data by contacting us via email.
             </p>
 
-            <h4>8. Contact Us</h4>
+            <h4>7. Contact Us</h4>
             <p>
                 If you have questions about this privacy policy, contact us at: <strong>ritusminwebsite@gmail.com</strong>
             </p>
 
-            <h4>9. Changes to Policy</h4>
+            <h4>8. Changes to Policy</h4>
             <p>
                 We may update this policy from time to time. We will notify you of any changes by posting the new policy on this page.
             </p>
 
             <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center;">
-                <button onclick="acceptPrivacyPolicy()" class="btn btn-primary" style="width: 100%;">
+                <button onclick="acceptPrivacy()" class="btn btn-primary" style="width: 100%;">
                     <i class="fas fa-check"></i> I Accept
                 </button>
                 <p style="font-size: 0.85rem; color: var(--secondary-text); margin-top: 1rem;">

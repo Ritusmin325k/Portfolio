@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initTheme() {
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
-        document.body.classList.add('light-mode');
+        document.body.classList.add('dark-mode');
     }
     updateThemeIcon(savedTheme);
 }
@@ -39,15 +39,15 @@ function setupThemeToggle() {
 
     const savedTheme = localStorage.getItem('theme') || 'light';
     if (savedTheme === 'dark') {
-        document.body.classList.add('light-mode');
+        document.body.classList.add('dark-mode');
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     } else {
         themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     }
 
     themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('light-mode');
-        const isDark = document.body.classList.contains('light-mode');
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
         themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     });
@@ -299,12 +299,19 @@ function sendViaMailto(name, email, subject, message) {
 
 // ===== PROJECT FILTERING =====
 function setupProjectFilters() {
-    const filterBtns = document.querySelectorAll('.project-filters .filter-btn');
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-        });
+    const filterContainer = document.querySelector('.project-filters');
+    if (!filterContainer) return;
+
+    filterContainer.addEventListener('click', function(e) {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+
+        const filterBtns = filterContainer.querySelectorAll('.filter-btn');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.filter;
+        filterProjects(category);
     });
 }
 
@@ -320,44 +327,58 @@ function filterProjects(category) {
 }
 
 // ===== PROJECT MODALS =====
-function openProjectModal(projectId) {
-    const modalMap = {
-        'phantom': 'phantomModal',
-        'ipchanger': 'ipchangerModal',
-        'fasteditor': 'fasteditorModal',
-        'filemanager': 'filemanagerModal'
-    };
-    
-    const modalId = modalMap[projectId];
-    if (modalId) {
-        document.getElementById(modalId).style.display = 'block';
+function openProjectModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
 }
 
-function closeProjectModal(projectId) {
-    const modalMap = {
-        'phantom': 'phantomModal',
-        'ipchanger': 'ipchangerModal',
-        'fasteditor': 'fasteditorModal',
-        'filemanager': 'filemanagerModal'
-    };
-    
-    const modalId = modalMap[projectId];
-    if (modalId) {
-        document.getElementById(modalId).style.display = 'none';
+function closeProjectModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
 }
 
-window.addEventListener('click', function(event) {
+document.addEventListener('click', function(e) {
+    const modalLink = e.target.closest('[data-modal]');
+    if (modalLink) {
+        e.preventDefault();
+        openProjectModal(modalLink.dataset.modal);
+    }
+
+    const modalClose = e.target.closest('.modal-close');
+    if (modalClose) {
+        const modal = modalClose.closest('.modal');
+        closeProjectModal(modal.id);
+    }
+
     const modals = document.querySelectorAll('.modal');
     modals.forEach(modal => {
-        if (event.target === modal) {
+        if (e.target === modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
     });
+
+    const privacyAccept = e.target.closest('.privacy-banner .btn-primary');
+    if (privacyAccept) {
+        acceptPrivacy();
+    }
+
+    const privacyDecline = e.target.closest('.privacy-banner .btn-secondary');
+    if (privacyDecline) {
+        declinePrivacy();
+    }
+
+    const privacyPolicyLink = e.target.closest('#privacyBanner a');
+    if (privacyPolicyLink) {
+        e.preventDefault();
+        showFullPrivacy(e);
+    }
 });
 
 // ===== AOS SETUP =====
@@ -451,7 +472,6 @@ function hidePrivacyBanner() {
 function acceptPrivacy() {
     localStorage.setItem('privacyPolicyAccepted', 'true');
     hidePrivacyBanner();
-    logVisitorIP();
 }
 
 function declinePrivacy() {
@@ -475,35 +495,6 @@ function closeFullPrivacy() {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
-}
-
-// ===== IP LOGGING FOR NETLIFY =====
-function logVisitorIP() {
-    fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            const visitorIP = data.ip;
-            const timestamp = new Date().toISOString();
-            const pageURL = window.location.href;
-            
-            const logData = {
-                ip: visitorIP,
-                timestamp: timestamp,
-                url: pageURL,
-                userAgent: navigator.userAgent
-            };
-            
-            fetch('/.netlify/functions/log-visitor', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(logData)
-            }).catch(err => {
-                console.log('IP logging not available');
-            });
-        })
-        .catch(err => console.log('IP logging error:', err));
 }
 
 // ===== SCROLL-LINKED ANIMATIONS =====
